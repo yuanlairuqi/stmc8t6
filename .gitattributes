@@ -1,0 +1,22 @@
+* text=auto eol=lf
+*.c text eol=lf
+*.h text eol=lf
+*.s text eol=lf
+*.py text eol=lf
+*.java text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.xml text eol=lf
+*.gradle text eol=lf
+*.ioc text eol=lf
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.log text eol=lf -whitespace
+*.apk binary
+*.bin binary
+*.elf binary
+*.zip binary
+*.png binary
+*.pdf binary

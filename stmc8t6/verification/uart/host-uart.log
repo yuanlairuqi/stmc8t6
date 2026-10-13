@@ -1,0 +1,19 @@
+PASS disconnected UART retains autonomous one-shot
+PASS STOP cancels waiting one-shot permanently until reset
+PASS STOP during running/finished batch, count certainty bounded
+PASS STOP during running/finished batch, count certainty bounded
+PASS overflow/UART error stops, flushes, rearms and resynchronizes
+PASS overflow/UART error stops, flushes, rearms and resynchronizes
+PASS RX rearm failure cancels pending move and recovers
+PASS noise/CRC failure ignored; fragmented valid frame recovers
+PASS new session requires STOP before any movement
+PASS immutable in-flight frame; pending status coalesces; unsupported move rejected
+PASS stalled TX aborts at 100ms without blocking main loop
+PASS TX start failure returns driver error and retries latest status
+PASS 600ms link timeout, ping does not clear stop reason, explicit STOP recovers
+PASS duplicates/old tokens cannot restart; new session STOP accepted
+PASS actual ESP bridge + STM HAL adapter roundtrip, rejection, STOP ACK, ping, timeout, ESP reboot
+PASS: CRC, corrupt/noisy/split stream, UART bridge+STM32 roundtrip, startup STOP, retry/replay leases, ACK loss, STOP preemption, reboot/session protection, wraparound, driver readiness/failure
+PASS continuous mode default disabled; zero speed stops; bad values rejected
+PASS enabled continuous PWM, percent endpoints, no counter reset on speed change, DIR hold/setup, STOP, wrap, fault
+PASS enabled UART cycle: 300/200ms phases, active after DIR delay, fresh heartbeat/speed change preserve reverse phase, lease expires despite PING

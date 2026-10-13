@@ -14,6 +14,8 @@ _Static_assert(TIM_CCMR1_OC1FE == (1U << 2), "OC1FE bit mismatch");
 _Static_assert(TIM_CCMR1_OC1PE == (1U << 3), "OC1PE bit mismatch");
 _Static_assert(TIM_CCMR1_OC1M == (7U << 4), "OC1M mask mismatch");
 _Static_assert(TIM_OCMODE_PWM2 == (7U << 4), "PWM2 mode mismatch");
+_Static_assert(TIM_CCMR1_OC1M_Pos == 4U && TIM_OCMODE_FORCED_INACTIVE == (4U << 4),
+               "Forced inactive mode mismatch");
 _Static_assert(TIM_CCER_CC1E == 1U, "CC1E bit mismatch");
 _Static_assert(TIM_CCER_CC1P == (1U << 1), "CC1P bit mismatch");
 _Static_assert(TIM_CCER_CC1NE == (1U << 2), "CC1NE bit mismatch");

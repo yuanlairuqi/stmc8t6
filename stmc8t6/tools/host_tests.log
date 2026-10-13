@@ -1,9 +1,0 @@
-PASS zero-pulse request rejected
-PASS ppr=16 pulses=1 batches=1, no restart, final PUL low
-PASS ppr=200 pulses=13 batches=1, no restart, final PUL low
-PASS ppr=1600 pulses=100 batches=1, no restart, final PUL low
-PASS ppr=4096 pulses=256 batches=1, no restart, final PUL low
-PASS ppr=4112 pulses=257 batches=2, no restart, final PUL low
-PASS ppr=40000 pulses=2500 batches=10, no restart, final PUL low
-PASS incompatible PWM mode rejected
-PASS unexpected stop rejected

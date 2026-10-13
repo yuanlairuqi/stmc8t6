@@ -1,0 +1,2 @@
+PASS IOC pin map, UART 115200/8N1, PWM2 PSC/ARR/CCR, original clock/SWD, one-shot user calls, CMake module
+PASS custom timer constants match IOC, MSP clocks and GPIO bindings, aliases, HSE, HAL modules, unique pins, nonblocking USART2 IRQ link, SysTick

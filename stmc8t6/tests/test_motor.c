@@ -126,6 +126,7 @@ int main(int argc,char **argv)
     Motor_Process();
     assert(g_motor_status.state==MOTOR_FAULT);
     assert(g_motor_status.completed_pulses==0U);
+    assert(g_motor_status.pulse_count_exact==0U);
     assert(test_tim1.CNT<test_tim1.CCR1);
     puts("PASS unexpected stop rejected");
     return 0;

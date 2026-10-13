@@ -1,0 +1,45 @@
+# Generated builds, tools and machine settings
+**/build/
+**/.gradle/
+**/.settings/
+**/.vscode/
+**/local.properties
+**/sdkconfig.old
+**/backups/
+**/__pycache__/
+*.pyc
+*.log
+*.tmp
+mx.scratch/
+
+# Private keys and local environment
+*.jks
+*.keystore
+*.pem
+*.key
+.env
+.env.*
+!.env.example
+
+# Deliverables belong to tagged GitHub releases
+**/release/
+*.apk
+*.aab
+*.bin
+*.elf
+*.hex
+*.map
+*.zip
+*.7z
+*.o
+*.obj
+*.class
+
+# Local reference material in the desktop folder
+/ESP-NOW官方文档/
+/*.pdf
+/*.STEP
+/*.png
+
+# Preserve documented verification evidence
+!**/verification/**/*.log

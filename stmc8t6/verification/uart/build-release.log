@@ -1,0 +1,40 @@
+CMake: C:\Users\y\AppData\Local\stm32cube\bundles\cmake\4.4.0+st.1\bin\cmake.exe
+GCC: C:\Users\y\AppData\Local\stm32cube\bundles\gnu-tools-for-stm32\14.3.1+st.2\bin\arm-none-eabi-gcc.exe
+Build type: Release
+-- Configuring done (0.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/Users/y/Desktop/c8t6/stmc8t6/build/MotorRelease
+[1/2] Cleaning additional files...
+[2/2] Cleaning all built files...
+Cleaning... 26 files.
+[1/26] Building C object CMakeFiles/stmc8t6.dir/Core/Src/main.c.obj
+[2/26] Building C object CMakeFiles/stmc8t6.dir/Core/Src/stm32f1xx_it.c.obj
+[3/26] Building C object CMakeFiles/stmc8t6.dir/Core/Src/stm32f1xx_hal_msp.c.obj
+[4/26] Building ASM object CMakeFiles/stmc8t6.dir/startup_stm32f103xb.s.obj
+[5/26] Building C object CMakeFiles/stmc8t6.dir/Core/Src/sysmem.c.obj
+[6/26] Building C object CMakeFiles/stmc8t6.dir/Core/Src/motor_motion.c.obj
+[7/26] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f1xx.c.obj
+[8/26] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.obj
+[9/26] Building C object CMakeFiles/stmc8t6.dir/Core/Src/robot_wire.c.obj
+[10/26] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
+[11/26] Building C object CMakeFiles/stmc8t6.dir/Core/Src/robot_uart.c.obj
+[12/26] Building C object CMakeFiles/stmc8t6.dir/Core/Src/syscalls.c.obj
+[13/26] Building C object CMakeFiles/stmc8t6.dir/Core/Src/robot_peer.c.obj
+[14/26] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
+[15/26] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.obj
+[16/26] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj
+[17/26] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj
+[18/26] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj
+[19/26] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.obj
+[20/26] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.obj
+[21/26] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj
+[22/26] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.obj
+[23/26] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
+[24/26] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
+[25/26] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
+[26/26] Linking C executable stmc8t6.elf
+Memory region         Used Size  Region Size  %age Used
+             RAM:        2376 B        20 KB     11.60%
+           FLASH:        9992 B        64 KB     15.25%
+   text	   data	    bss	    dec	    hex	filename
+   9960	     32	   2344	  12336	   3030	build/MotorRelease/stmc8t6.elf

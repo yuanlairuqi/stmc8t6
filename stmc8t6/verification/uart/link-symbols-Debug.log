@@ -1,0 +1,6 @@
+08003e50 T HAL_UART_ErrorCallback
+08003dc4 T HAL_UART_RxCpltCallback
+080037e4 T Motor_Stop
+08003e7c T RobotUART_Poll
+08003090 T USART2_IRQHandler
+PASS no undefined symbols

@@ -1,0 +1,48 @@
+menu "Robot battery input (disabled until wiring is confirmed)"
+config ROBOT_BATTERY_ENABLED
+    bool "Enable real ADC battery input"
+    default n
+    help
+        Connect a verified resistor divider first. Never connect a battery
+        directly to the ADC pin. ESP32-S3 ADC1 channel 0 corresponds to GPIO1.
+config ROBOT_BATTERY_CHANNEL
+    int "ADC1 channel (0..9 maps to GPIO1..10 on ESP32-S3)"
+    range 0 9
+    default 0
+    depends on ROBOT_BATTERY_ENABLED
+config ROBOT_BATTERY_R_TOP
+    int "Divider resistor: battery to ADC (ohm)"
+    range 1 1000000
+    default 100000
+    depends on ROBOT_BATTERY_ENABLED
+config ROBOT_BATTERY_R_BOTTOM
+    int "Divider resistor: ADC to GND (ohm)"
+    range 1 1000000
+    default 33000
+    depends on ROBOT_BATTERY_ENABLED
+endmenu
+menu "Robot UART to STM32 (configure after hardware confirmation)"
+config ROBOT_UART_ENABLED
+    bool "Enable STM32 UART bridge"
+    default n
+config ROBOT_UART_PORT
+    int "ESP32 UART port (do not use console UART0)"
+    range 1 2
+    default 1
+    depends on ROBOT_UART_ENABLED
+config ROBOT_UART_TX_GPIO
+    int "TX GPIO (-1 = hardware not decided)"
+    range -1 48
+    default -1
+    depends on ROBOT_UART_ENABLED
+config ROBOT_UART_RX_GPIO
+    int "RX GPIO (-1 = hardware not decided)"
+    range -1 48
+    default -1
+    depends on ROBOT_UART_ENABLED
+config ROBOT_UART_BAUD
+    int "UART baud rate, 8 data bits, no parity, 1 stop bit"
+    range 9600 2000000
+    default 115200
+    depends on ROBOT_UART_ENABLED
+endmenu

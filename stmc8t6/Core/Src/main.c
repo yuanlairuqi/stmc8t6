@@ -22,6 +22,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "motor_motion.h"
+#include "robot_uart.h"
 
 /* USER CODE END Includes */
 
@@ -101,6 +102,7 @@ int main(void)
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
+  RobotUART_Init(&huart2);
   Motor_StartOnce(&htim1);
 
   /* USER CODE END 2 */
@@ -112,6 +114,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    RobotUART_Poll(); /* STOP is processed before a waiting batch can start. */
     Motor_Process();
   }
   /* USER CODE END 3 */

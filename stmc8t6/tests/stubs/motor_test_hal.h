@@ -20,6 +20,7 @@ extern TIM_TypeDef test_tim1;
 #define TIM_CCMR1_OC1FE (1U << 2)
 #define TIM_CCMR1_OC1PE (1U << 3)
 #define TIM_CCMR1_OC1M (7U << 4)
+#define TIM_CCMR1_OC1M_Pos 4U
 #define TIM_OCMODE_PWM2 (7U << 4)
 #define TIM_CCER_CC1E (1U << 0)
 #define TIM_CCER_CC1P (1U << 1)

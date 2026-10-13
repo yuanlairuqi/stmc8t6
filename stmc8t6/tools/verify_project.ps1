@@ -13,7 +13,7 @@ function Read-Settings([string]$path) {
     return $map
 }
 $settings=Read-Settings (Join-Path $projectRoot 'stmc8t6.ioc')
-$before=Read-Settings (Join-Path $projectRoot 'backups/before_motor_20261013/stmc8t6.ioc')
+$before=Read-Settings (Join-Path $projectRoot 'tests/fixtures/stm32_initial/stmc8t6.ioc')
 foreach($key in $before.Keys | Where-Object { $_ -like 'RCC.*' -or $_ -like 'PA13.*' -or $_ -like 'PA14.*' }) {
     Require ($before[$key] -eq $settings[$key]) "Clock/SWD changed: $key"
 }
@@ -29,7 +29,7 @@ Require ($settings['TIM1.Prescaler'] -eq '71') 'IOC PSC mismatch'
 Require ($settings['TIM1.Period'] -eq '9999') 'IOC ARR mismatch'
 Require ($settings['TIM1.Pulse-PWM Generation1 CH1'] -eq '5000') 'IOC CCR mismatch'
 $main=[IO.File]::ReadAllText((Join-Path $projectRoot 'Core/Src/main.c'))
-$original=[IO.File]::ReadAllText((Join-Path $projectRoot 'backups/before_motor_20261013/Core/Src/main.c'))
+$original=[IO.File]::ReadAllText((Join-Path $projectRoot 'tests/fixtures/stm32_initial/main.c'))
 $clockPattern='void SystemClock_Config\(void\)\s*\{[\s\S]*?\n\}'
 $clockNow=[regex]::Match($main,$clockPattern)
 $clockBefore=[regex]::Match($original,$clockPattern)
@@ -75,11 +75,16 @@ Require ($halConfig.Contains('#define HSE_VALUE    8000000U')) 'HSE_VALUE mismat
 Require ($halConfig.Contains('#define HAL_TIM_MODULE_ENABLED') -and $halConfig.Contains('#define HAL_UART_MODULE_ENABLED')) 'Required HAL modules missing'
 $appSources=Get-ChildItem (Join-Path $projectRoot 'Core/Src') -Filter '*.c' |
     ForEach-Object { [IO.File]::ReadAllText($_.FullName) }
-Require (-not ($appSources -match 'HAL_UART_(Transmit|Receive)\s*\(')) 'Unrequested UART communication found'
+Require (-not ($appSources -match 'HAL_UART_(Transmit|Receive)\s*\(')) 'Blocking UART communication found'
+Require ($main.Contains('RobotUART_Init(&huart2);') -and $main.Contains('RobotUART_Poll();')) 'USART2 application binding missing'
+Require ($settings['NVIC.USART2_IRQn'] -like 'true*') 'USART2 IRQ not enabled in IOC'
+Require ($msp.Contains('HAL_NVIC_EnableIRQ(USART2_IRQn);')) 'USART2 IRQ not enabled in MSP'
+Require ($cmake.Contains('Core/Src/robot_uart.c') -and $cmake.Contains('Core/Src/robot_peer.c') -and $cmake.Contains('Core/Src/robot_wire.c')) 'UART modules not linked'
 Require (-not ($appSources -match 'HAL_TIM_PWM_Start\s*\(')) 'Uncontrolled PWM start found'
 $pins=@($settings.Keys | Where-Object {$_ -match '^Mcu.Pin\d+$'} | ForEach-Object {$settings[$_]})
 Require (($pins | Sort-Object -Unique).Count -eq $pins.Count) 'Duplicate pin in IOC'
 $interrupts=[IO.File]::ReadAllText((Join-Path $projectRoot 'Core/Src/stm32f1xx_it.c'))
 Require ($interrupts.Contains('HAL_IncTick();')) 'SysTick tick update missing'
+Require ($interrupts.Contains('HAL_UART_IRQHandler(&huart2);')) 'USART2 IRQ handler missing'
 Write-Output 'PASS IOC pin map, UART 115200/8N1, PWM2 PSC/ARR/CCR, original clock/SWD, one-shot user calls, CMake module'
-Write-Output 'PASS custom timer constants match IOC, MSP clocks and GPIO bindings, pin aliases, HSE_VALUE, HAL modules, unique pins, no serial commands, SysTick'
+Write-Output 'PASS custom timer constants match IOC, MSP clocks and GPIO bindings, aliases, HSE, HAL modules, unique pins, nonblocking USART2 IRQ link, SysTick'

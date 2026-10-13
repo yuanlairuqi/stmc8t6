@@ -15,7 +15,7 @@
 | HSE | PD0/PD1 | 外部无源晶振 | 软件按 8 MHz 配置，实物频率待确认 |
 | ENA 候选 | PB1 | 当前未配置、未连接 | 后续确认输入极性与接口后再启用 |
 
-三个串口统一为 **115200 bit/s、8 数据位、无校验、1 停止位、无硬件流控、16 倍过采样**。只进行初始化，没有发送/接收任务，没有串口运动命令，也没有通过串口调试 T60。
+三个串口统一为 **115200 bit/s、8 数据位、无校验、1 停止位、无硬件流控、16 倍过采样**。后续 ESP32 协作已为 USART2 加入停止命令与状态收发，USART1/3 仍只初始化预留；没有通过串口调试 T60。最新说明和验证以 [README_UART.md](README_UART.md) 为准。
 
 可扩展引脚：PB1（ENA 候选）、PB6/PB7（I2C1 候选）、PB12（报警候选）、PB13/PB14（限位候选）、PA4（模拟调速候选），当前保持未分配。使用前仍需核对板载连接与排针引出；PB12/13/14 会占用相应 SPI2 功能。
 
@@ -23,7 +23,7 @@
 
 ## 参数与执行行为
 
-入口位于 `Core/Src/main.c` 的 USER CODE 2，调用 `Motor_StartOnce(&htim1)`；主循环 USER CODE 3 仅调用 `Motor_Process()`。
+入口位于 `Core/Src/main.c` 的 USER CODE 2，先初始化 ESP32 USART2 通信，再调用 `Motor_StartOnce(&htim1)`；主循环 USER CODE 3 先处理通信，再调用 `Motor_Process()`。有效 STOP 会取消上电动作且不自动重启；ESP32 启用串口后的启动 STOP 握手也有这一优先权。
 
 运动参数集中在 `Core/Inc/motor_config.h`：
 
@@ -105,7 +105,9 @@ build_motor.ps1 定位现有 STM32 bundles 内的 CMake、Ninja、ARM GCC，创�
 - [锐特 T60 V2.0 产品页](https://www.rtelligent.com/t60-v2-0/)
 - [锐特 T60 参考手册（存在版本差异）](https://www.rtelligent.com/uploads/锐特技术T60-2.0闭环步进驱动器用户手册.pdf)
 
-## 本次验证结果
+## 上电单次工程历史验证（串口协作修改前）
+
+以下构建体积及测试记录属于串口接入之前；当前工程包含通信与默认关闭的连续模式，请参阅 [当前串口验证报告](verification/UART_REPORT.md)。
 
 2026-10-13 已完成：
 
