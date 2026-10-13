@@ -1,0 +1,26 @@
+PASS Debug ELF has no unresolved symbols
+
+2000014c B g_motor_status
+2000002c B htim1
+20000074 B huart1
+200000bc B huart2
+20000104 B huart3
+08002834 T Motor_Process
+080026a4 T Motor_StartOnce
+
+Hash : 746BC1B57FC0988CB64CEA2AC79277E1E998E88E7EF877457CB2E5BF90DFF670
+Path : C:\Users\y\Desktop\c8t6\stmc8t6\build\MotorDebug\stmc8t6.elf
+
+PASS Release ELF has no unresolved symbols
+20000154 B g_motor_status
+20000104 B htim1
+200000bc B huart1
+20000074 B huart2
+2000002c B huart3
+08001474 T Motor_Process
+080013ac T Motor_StartOnce
+
+Hash : 0807B0F162D7E5A2459E6DFD782C9FE7764115EB45B866ACA5852A0A4B4B0306
+Path : C:\Users\y\Desktop\c8t6\stmc8t6\build\MotorRelease\stmc8t6.elf
+
+

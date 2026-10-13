@@ -1,0 +1,5 @@
+config load C:\Users\y\Desktop\c8t6\stmc8t6\stmc8t6.ioc
+project path C:\Users\y\Desktop\c8t6\stmc8t6
+project generate
+config save C:\Users\y\Desktop\c8t6\stmc8t6\stmc8t6.ioc
+exit

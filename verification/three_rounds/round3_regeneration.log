@@ -1,0 +1,3 @@
+PASS all 16 production/config files unchanged byte-for-byte after CubeMX regeneration
+PASS IOC pin map, UART 115200/8N1, PWM2 PSC/ARR/CCR, original clock/SWD, one-shot user calls, CMake module
+PASS custom timer constants match IOC, MSP clocks and GPIO bindings, pin aliases, HSE_VALUE, HAL modules, unique pins, no serial commands, SysTick

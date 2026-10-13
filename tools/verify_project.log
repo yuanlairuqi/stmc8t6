@@ -1,0 +1,1 @@
+PASS IOC pin map, UART 115200/8N1, PWM2 PSC/ARR/CCR, original clock/SWD, one-shot user calls, CMake module
