@@ -1,6 +1,6 @@
 # 日常 Git 管理
 
-仓库根目录为`C:\Users\y\Desktop\c8t6`。STM、ESP和安卓都在同一个仓库，`stmc8t6`不再单独存放`.git`。远程为`https://github.com/yuanlairuqi/stmc8t6.git`。
+仓库根目录为当前工程目录（本README所在的10号工程根目录）。STM、ESP和安卓都在同一个仓库，`stmc8t6`不再单独存放`.git`。远程为`https://github.com/yuanlairuqi/stmc8t6.git`。
 
 ## 提交与同步
 

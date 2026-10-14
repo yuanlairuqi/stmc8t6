@@ -1,0 +1,40 @@
+PASS: STM32/ESP32 shared protocol files match
+PASS: motions, release/stop, lease deadline, disconnect, invalid payloads, replay, wraparound, 10000 fuzz packets, wire status
+PASS: CRC, corrupt/noisy/split stream, UART bridge+STM32 roundtrip, startup STOP, retry/replay leases, ACK loss, STOP preemption, reboot/session protection, wraparound, driver readiness/failure
+PASS: Android codec + actual C-generated telemetry match; malformed versions/ranges rejected
+PASS: production Android queue, two-level STOP confirmation, stale/unknown ACK, STOP priority, serialized GATT, bounded old movement, ACK/write deadlines, reconnect reset
+PASS zero-pulse request rejected
+PASS ppr=16 pulses=1 batches=1, no restart, final PUL low
+PASS ppr=200 pulses=13 batches=1, no restart, final PUL low
+PASS ppr=1600 pulses=100 batches=1, no restart, final PUL low
+PASS ppr=4080 pulses=255 batches=1, no restart, final PUL low
+PASS ppr=4096 pulses=256 batches=1, no restart, final PUL low
+PASS ppr=4112 pulses=257 batches=2, no restart, final PUL low
+PASS ppr=8176 pulses=511 batches=2, no restart, final PUL low
+PASS ppr=8192 pulses=512 batches=2, no restart, final PUL low
+PASS ppr=40000 pulses=2500 batches=10, no restart, final PUL low
+PASS incompatible PWM mode rejected
+PASS unexpected stop rejected
+PASS NULL timer rejected and no restart from fault
+PASS non-TIM1 handle rejected
+PASS inverted PWM polarity rejected
+PASS disconnected UART retains autonomous one-shot
+PASS STOP cancels waiting one-shot permanently until reset
+PASS STOP during running/finished batch, count certainty bounded
+PASS STOP during running/finished batch, count certainty bounded
+PASS overflow/UART error stops, flushes, rearms and resynchronizes
+PASS overflow/UART error stops, flushes, rearms and resynchronizes
+PASS RX rearm failure cancels pending move and recovers
+PASS noise/CRC failure ignored; fragmented valid frame recovers
+PASS new session requires STOP before any movement
+PASS immutable in-flight frame; pending status coalesces; unsupported move rejected
+PASS stalled TX aborts at 100ms without blocking main loop
+PASS TX start failure returns driver error and retries latest status
+PASS 600ms link timeout, ping does not clear stop reason, explicit STOP recovers
+PASS duplicates/old tokens cannot restart; new session STOP accepted
+PASS actual ESP bridge + STM HAL adapter roundtrip, rejection, STOP ACK, ping, timeout, ESP reboot
+PASS: CRC, corrupt/noisy/split stream, UART bridge+STM32 roundtrip, startup STOP, retry/replay leases, ACK loss, STOP preemption, reboot/session protection, wraparound, driver readiness/failure
+PASS continuous mode default disabled; zero speed stops; bad values rejected
+PASS enabled continuous PWM, percent endpoints, no counter reset on speed change, DIR hold/setup, STOP, wrap, fault
+PASS enabled UART cycle: 300/200ms phases, active after DIR delay, fresh heartbeat/speed change preserve reverse phase, lease expires despite PING
+PASS: 38 production host test groups; hardware not exercised

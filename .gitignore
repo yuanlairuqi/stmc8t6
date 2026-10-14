@@ -43,3 +43,18 @@ mx.scratch/
 
 # Preserve documented verification evidence
 !**/verification/**/*.log
+
+# Imported desktop archives and generated Keil outputs stay local
+/参考资料/
+/交付文件/
+/00_项目说明.txt
+/*校验清单.csv
+**/MDK-ARM/stmc8t6/
+*.axf
+*.crf
+*.d
+*.lst
+*.htm
+*.bak
+*.uvguix.*
+*.uvoptx

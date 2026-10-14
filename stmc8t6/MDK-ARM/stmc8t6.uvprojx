@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" noNamespaceSchemaLocation="project_projx.xsd">
+<?xml version='1.0' encoding='utf-8'?>
+<Project noNamespaceSchemaLocation="project_projx.xsd">
   <SchemaVersion>2.1</SchemaVersion>
   <Header>### uVision Project, (C) Keil Software</Header>
   <Targets>
@@ -238,13 +238,13 @@
               </Ocm6>
               <IRAM>
                 <Type>0</Type>
-                <StartAddress>0x0</StartAddress>
-                <Size>0x0</Size>
+                <StartAddress>0x20000000</StartAddress>
+                <Size>0x5000</Size>
               </IRAM>
               <IROM>
                 <Type>1</Type>
-                <StartAddress>0x0</StartAddress>
-                <Size>0x0</Size>
+                <StartAddress>0x08000000</StartAddress>
+                <Size>0x10000</Size>
               </IROM>
               <XRAM>
                 <Type>0</Type>
@@ -268,8 +268,8 @@
               </OCR_RVCT3>
               <OCR_RVCT4>
                 <Type>1</Type>
-                <StartAddress />
-                <Size />
+                <StartAddress>0x08000000</StartAddress>
+                <Size>0x10000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -293,8 +293,8 @@
               </OCR_RVCT8>
               <OCR_RVCT9>
                 <Type>0</Type>
-                <StartAddress />
-                <Size />
+                <StartAddress>0x20000000</StartAddress>
+                <Size>0x5000</Size>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
@@ -401,6 +401,26 @@
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32f1xx_hal_msp.c</FilePath>
             </File>
+            <File>
+              <FileName>motor_motion.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/motor_motion.c</FilePath>
+            </File>
+            <File>
+              <FileName>robot_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/robot_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>robot_wire.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/robot_wire.c</FilePath>
+            </File>
+            <File>
+              <FileName>robot_peer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Core/Src/robot_peer.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -461,6 +481,21 @@
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f1xx_hal_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f1xx_hal_tim_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f1xx_hal_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -489,4 +524,3 @@
     <files />
   </RTE>
 </Project>
-
