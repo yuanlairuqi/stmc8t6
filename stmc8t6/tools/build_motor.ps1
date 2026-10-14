@@ -1,6 +1,7 @@
 param([ValidateSet('Debug','Release')][string]$Configuration='Debug')
 $ErrorActionPreference='Stop'
 $projectRoot=Split-Path $PSScriptRoot -Parent
+. (Join-Path $PSScriptRoot 'prepare_build.ps1')
 $bundleRoot=Join-Path $env:LOCALAPPDATA 'stm32cube/bundles'
 function Find-BundleBinary([string]$package,[string]$binary) {
     $match=Get-ChildItem (Join-Path $bundleRoot $package) -Directory |
@@ -20,6 +21,7 @@ try {
     Push-Location $projectRoot
     try {
         $buildDir="build/Motor$Configuration"
+        Initialize-ProjectBuildDirectory $projectRoot (Join-Path $projectRoot $buildDir)
         Write-Output "CMake: $cmake"
         Write-Output "GCC: $gcc"
         & $cmake --preset $Configuration -B $buildDir

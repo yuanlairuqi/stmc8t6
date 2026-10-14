@@ -182,5 +182,5 @@ void app_main(void) {
     ESP_ERROR_CHECK(ble_svc_gap_device_name_set("ESP32-Robot"));
     nimble_port_freertos_init(host_task);
     if(xTaskCreate(telemetry_task, "telemetry", 4096, NULL, 5, NULL)!=pdPASS) abort();
-    ESP_LOGI("robot", "Ready: BLE protocol v2; UART GPIOs and motor hooks require hardware configuration");
+    ESP_LOGI("robot", "Ready: BLE protocol v3 / UART v2; UART GPIOs and motor hooks require hardware configuration");
 }

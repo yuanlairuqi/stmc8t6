@@ -1,6 +1,7 @@
 #include "motor_motion.h"
 #include "motor_config.h"
 #include "motor_math.h"
+#include "motor_assert.h"
 
 volatile MotorStatus g_motor_status = {MOTOR_NOT_STARTED, 0U, 0U, 0U, 1U};
 static TIM_TypeDef *motor_timer;
@@ -8,21 +9,21 @@ static uint32_t wait_started;
 static uint8_t continuous_direction;
 static uint32_t continuous_period;
 
-_Static_assert(MOTOR_DRIVER_PULSES_PER_REV > 0U, "Set a nonzero pulses/rev");
-_Static_assert(MOTOR_TARGET_ANGLE_MDEG <= 360000U, "Angle must be 0..360 degrees");
-_Static_assert(MOTOR_TIMER_COMPARE > 0U &&
+MOTOR_STATIC_ASSERT(MOTOR_DRIVER_PULSES_PER_REV > 0U, "Set a nonzero pulses/rev");
+MOTOR_STATIC_ASSERT(MOTOR_TARGET_ANGLE_MDEG <= 360000U, "Angle must be 0..360 degrees");
+MOTOR_STATIC_ASSERT(MOTOR_TIMER_COMPARE > 0U &&
                MOTOR_TIMER_COMPARE <= MOTOR_TIMER_PERIOD,
                "PWM2 needs both an inactive interval and an active interval");
-_Static_assert(MOTOR_TIMER_PERIOD <= 65535U, "F103 TIM1 ARR is 16-bit");
-_Static_assert(MOTOR_TIMER_PRESCALER <= 65535U, "F103 TIM1 PSC is 16-bit");
-_Static_assert(MOTOR_DIRECTION_LEVEL <= 1U, "DIR must be 0 or 1");
-_Static_assert(MOTOR_CONTINUOUS_ENABLED <= 1U, "Enable flag must be 0 or 1");
-_Static_assert(MOTOR_CONTINUOUS_MIN_HZ > 0U &&
+MOTOR_STATIC_ASSERT(MOTOR_TIMER_PERIOD <= 65535U, "F103 TIM1 ARR is 16-bit");
+MOTOR_STATIC_ASSERT(MOTOR_TIMER_PRESCALER <= 65535U, "F103 TIM1 PSC is 16-bit");
+MOTOR_STATIC_ASSERT(MOTOR_DIRECTION_LEVEL <= 1U, "DIR must be 0 or 1");
+MOTOR_STATIC_ASSERT(MOTOR_CONTINUOUS_ENABLED <= 1U, "Enable flag must be 0 or 1");
+MOTOR_STATIC_ASSERT(MOTOR_CONTINUOUS_MIN_HZ > 0U &&
                MOTOR_CONTINUOUS_MAX_HZ >= MOTOR_CONTINUOUS_MIN_HZ,
                "Set a positive continuous frequency range");
-_Static_assert(MOTOR_TIMER_INPUT_HZ / (MOTOR_TIMER_PRESCALER + 1U) /
+MOTOR_STATIC_ASSERT(MOTOR_TIMER_INPUT_HZ / (MOTOR_TIMER_PRESCALER + 1U) /
                MOTOR_CONTINUOUS_MIN_HZ <= 65536U, "Continuous ARR is 16-bit");
-_Static_assert(MOTOR_CONTINUOUS_MAX_HZ <=
+MOTOR_STATIC_ASSERT(MOTOR_CONTINUOUS_MAX_HZ <=
                MOTOR_TIMER_INPUT_HZ / (MOTOR_TIMER_PRESCALER + 1U) / 2U,
                "Continuous PWM requires high and low ticks");
 

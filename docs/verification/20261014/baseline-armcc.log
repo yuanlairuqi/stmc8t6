@@ -1,0 +1,114 @@
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 11: Error:  #79: expected a type specifier
+  _Static_assert(
+OTOR_DRIVER_PULSES_PER_REV > 0U, "Set a nonzero pulses/rev");
+                 ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 11: Error:  #79: expected a type specifier
+  _Static_assert(
+OTOR_DRIVER_PULSES_PER_REV > 0U, "Set a nonzero pulses/rev");
+                                                   ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 11: Warning:  #77-D: this declaration has no storage class or type specifier
+  _Static_assert(
+OTOR_DRIVER_PULSES_PER_REV > 0U, "Set a nonzero pulses/rev");
+  ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 12: Error:  #79: expected a type specifier
+  _Static_assert(
+OTOR_TARGET_ANGLE_MDEG <= 360000U, "Angle must be 0..360 degrees");
+                 ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 12: Error:  #79: expected a type specifier
+  _Static_assert(
+OTOR_TARGET_ANGLE_MDEG <= 360000U, "Angle must be 0..360 degrees");
+                                                     ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 12: Warning:  #77-D: this declaration has no storage class or type specifier
+  _Static_assert(
+OTOR_TARGET_ANGLE_MDEG <= 360000U, "Angle must be 0..360 degrees");
+  ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 13: Error:  #79: expected a type specifier
+  _Static_assert(
+OTOR_TIMER_COMPARE > 0U &&
+                 ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 15: Error:  #79: expected a type specifier
+                 "PWM2 needs both an inactive interval and an active interval");
+                 ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 13: Warning:  #77-D: this declaration has no storage class or type specifier
+  _Static_assert(MOTOR_TIMER_COMPARE > 0U &&
+  ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 16: Error:  #79: expected a type specifier
+  _Static_assert(
+OTOR_TIMER_PERIOD <= 65535U, "F103 TIM1 ARR is 16-bit");
+                 ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 16: Error:  #79: expected a type specifier
+  _Static_assert(
+OTOR_TIMER_PERIOD <= 65535U, "F103 TIM1 ARR is 16-bit");
+                                               ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 16: Warning:  #77-D: this declaration has no storage class or type specifier
+  _Static_assert(
+OTOR_TIMER_PERIOD <= 65535U, "F103 TIM1 ARR is 16-bit");
+  ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 17: Error:  #79: expected a type specifier
+  _Static_assert(
+OTOR_TIMER_PRESCALER <= 65535U, "F103 TIM1 PSC is 16-bit");
+                 ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 17: Error:  #79: expected a type specifier
+  _Static_assert(
+OTOR_TIMER_PRESCALER <= 65535U, "F103 TIM1 PSC is 16-bit");
+                                                  ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 17: Warning:  #77-D: this declaration has no storage class or type specifier
+  _Static_assert(
+OTOR_TIMER_PRESCALER <= 65535U, "F103 TIM1 PSC is 16-bit");
+  ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 18: Error:  #79: expected a type specifier
+  _Static_assert(
+OTOR_DIRECTION_LEVEL <= 1U, "DIR must be 0 or 1");
+                 ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 18: Error:  #79: expected a type specifier
+  _Static_assert(
+OTOR_DIRECTION_LEVEL <= 1U, "DIR must be 0 or 1");
+                                              ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 18: Warning:  #77-D: this declaration has no storage class or type specifier
+  _Static_assert(
+OTOR_DIRECTION_LEVEL <= 1U, "DIR must be 0 or 1");
+  ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 19: Error:  #79: expected a type specifier
+  _Static_assert(
+OTOR_CONTINUOUS_ENABLED <= 1U, "Enable flag must be 0 or 1");
+                 ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 19: Error:  #79: expected a type specifier
+  _Static_assert(
+OTOR_CONTINUOUS_ENABLED <= 1U, "Enable flag must be 0 or 1");
+                                                 ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 19: Warning:  #77-D: this declaration has no storage class or type specifier
+  _Static_assert(
+OTOR_CONTINUOUS_ENABLED <= 1U, "Enable flag must be 0 or 1");
+  ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 20: Error:  #79: expected a type specifier
+  _Static_assert(
+OTOR_CONTINUOUS_MIN_HZ > 0U &&
+                 ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 22: Error:  #79: expected a type specifier
+                 "Set a positive continuous frequency range");
+                 ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 20: Warning:  #77-D: this declaration has no storage class or type specifier
+  _Static_assert(MOTOR_CONTINUOUS_MIN_HZ > 0U &&
+  ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 23: Error:  #79: expected a type specifier
+  _Static_assert(
+OTOR_TIMER_INPUT_HZ / (MOTOR_TIMER_PRESCALER + 1U) /
+                 ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 24: Error:  #79: expected a type specifier
+                 
+OTOR_CONTINUOUS_MIN_HZ <= 65536U, "Continuous ARR is 16-bit");
+                                                    ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 23: Warning:  #77-D: this declaration has no storage class or type specifier
+  _Static_assert(MOTOR_TIMER_INPUT_HZ / (MOTOR_TIMER_PRESCALER + 1U) /
+  ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 25: Error:  #79: expected a type specifier
+  _Static_assert(
+OTOR_CONTINUOUS_MAX_HZ <=
+                 ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 27: Error:  #79: expected a type specifier
+                 "Continuous PWM requires high and low ticks");
+                 ^
+"C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c", line 25: Warning:  #77-D: this declaration has no storage class or type specifier
+  _Static_assert(MOTOR_CONTINUOUS_MAX_HZ <=
+  ^
+C:\Users\y\AppData\Local\Temp\motor_readonly_audit_20261014\project\stmc8t6\Core\Src\motor_motion.c: 10 warnings, 20 errors

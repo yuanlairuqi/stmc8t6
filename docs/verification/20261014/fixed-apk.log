@@ -1,0 +1,12 @@
+Android native tools use an ASCII source snapshot: C:\Users\y\AppData\Local\Temp\motor-native-B58F1B3172EECD51
+ע: C:\Users\y\AppData\Local\Temp\motor-native-B58F1B3172EECD51\app\src\main\java\cn\robot\ble\MainActivity.javaʹ�û򸲸����ѹ�ʱ�� API��
+ע: �й���ϸ��Ϣ, ��ʹ�� -Xlint:deprecation ���±��롣
+Verifies
+Verified using v1 scheme (JAR signing): true
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): true
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+APK verified: C:\Users\y\Desktop\靶车项目\10_电机控制完整项目_STM32_ESP32_安卓\esp32_robot\android\build\ESP32-Control-debug.apk
